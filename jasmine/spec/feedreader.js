@@ -69,7 +69,7 @@ $(function () {
          * hiding/showing of the menu element.
          */
         it("Test if Menu is Hidden", function () {
-            expect(tempBody.className).toContain("menu-hidden");
+            expect(tempBody.classList).toContain("menu-hidden");
         });
 
         /* Test that ensures the menu changes
@@ -102,19 +102,14 @@ $(function () {
     describe("Initial Entries", function () {
 
         beforeEach(function (done) {
-            loadFeed(0, function () {
-                done();
-            });
+            loadFeed(0, done);
         });
 
 
         it("check if there is entries", function () {
             var numEntries = document.querySelector(".feed").getElementsByClassName("entry").length;
             expect(numEntries).toBeGreaterThan(0);
-            done();
         });
-        //end
-
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
